@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script type="module">
+           /*
+           全部引入 引入后 m1是一个 对象中有暴露模块所对应的暴露内容
+           全部引入之后会象python一样执行这里的代码
+           defult暴露出来的东西会包装成一个defult对象 然后存入吗
+           中
+           */
+           import *  as m1 from "./暴露模块.js"
+           console.log(m1)
+           /*把名字叫info1 func1的东西引入进来  该方法可以引入
+             as 起一个别名
+           */
+           import {info1 as c,fn1}  from "./暴露模块.js"
+           console.log(c ,fn1)
+           //引入默认暴露的方式 必须起一个别名 把默认暴露的东西做成对象 名字叫ds
+           import {default as ds} from "./暴露模块.js"
+           console.log(ds)
+
+           /*引入默认暴露的简单写法
+             特别注意: 以下的代码并不是把info2引入进来(暴露模块.js有这个同意暴露)
+             而是把默认暴露的东西做成一个叫info2的类导入进来
+           */
+           import info2 from "./暴露模块.js"
+           console.log(info2)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
